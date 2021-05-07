@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="kalkulal.js"></script>
+    <style>
+        body {
+            background-image: url('hatter.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="padding-left: 500px;">
+        <div class="card-columns">
+            <div class="card body">
+                <!-- Négyzet kerülete-->
+                <div class="card-body bg-dark text-white">
+                    <img class="card-img-top" src="képek/unnamed.jpg" alt="Card image" style="width:100%">
+                    <h4 class="card-title">Négyzet Kerülete</h4>
+                    <p class="card-text">Írja be a négyzet oldalainak értékét </p>
+                    <form>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">"a" oldal </label>
+                            </div>
+                            <input class="form-control" type="number" id="aoldal" min="0" onclick="szamol(), szamolt()">
+                            <p>cm</p>
+                        </div>
+                        <br>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Kerülete</label>
+                            </div>
+                            <input class="form-control" type="text" id="eredmenyk" disabled> <p>cm</p>
+                        </div>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Területe</label>
+                            </div>
+                            <input class="form-control" type="text" id="eredmenyt" disabled> <p>cm<sup>2</sup></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card body, masodik">
+                <!-- Kocka felszíne és térfogata-->
+                <div class="card-body bg-dark text-white">
+                    <img class="card-img-top" src="képek/kocka.gif" alt="Card image" style="width:97.5%">
+                    <h4 class="card-title">Kocka felszíne és térfogata</h4>
+                    <p class="card-text">Írja be a négyzet oldalainak értékét </p>
+                    <form>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">"a" oldal </label>
+                            </div>
+                            <input class="form-control" type="number" id="aoldal2" min="0" onclick="szamolkockaterfogat(), szamolkockafelszin()">
+                            <p>cm</p>
+                        </div>
+                        <br>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Térfogata (V)</label>
+                            </div>
+                            <input class="form-control" type="text" id="terfogat" disabled> <p>cm<sup>3</sup></p>
+                        </div>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Felszíne (A)</label>
+                            </div>
+                            <input class="form-control" type="text" id="felszin" disabled> <p>cm<sup>2</sup></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="position: absolute; padding-top: 50px; padding-left: 500px;">
+        <div class="card-columns">
+            <div class="card body">
+                <!-- Téglalap Kerülete-->
+                <div class="card-body bg-dark text-white">
+                    <img class="card-img-top" src="képek/teglalap.jpg" alt="Card image" style="width:100%">
+                    <h4 class="card-title">Téglalap Kerülete</h4>
+                    <p class="card-text">Írja be a négyzet oldalainak értékét </p>
+                    <form>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">"a" oldal </label>
+                            </div>
+                            <input class="form-control" type="number" id="teglalapaoldal" min="0" onclick="szamolteglalapkerulet(), szamolteglalapterulet()">
+                            <p>cm</p>
+                        </div>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">"b" oldal </label>
+                            </div>
+                            <input class="form-control" type="number" id="teglalapboldal" min="0" onclick="szamolteglalapkerulet(), szamolteglalapterulet()">
+                            <p>cm</p>
+                        </div>
+                        <br>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Kerülete</label>
+                            </div>
+                            <input class="form-control" type="text" id="eredmenyteglalapkerulet" disabled> <p>cm</p>
+                        </div>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Területe</label>
+                            </div>
+                            <input class="form-control" type="text" id="eredmenyteglalapterulet" disabled> <p>cm<sup>2</sup></p>
+                        </div>
+                    </form>
+                </div>
+            </div>  
+            <div class="card body">
+                <!-- Téglalap Kerülete-->
+                <div class="card-body bg-dark text-white">
+                    <img class="card-img-top" src="képek/teglatest.gif" alt="Card image" style="width:100%">
+                    <h4 class="card-title">Téglalap Kerülete</h4>
+                    <p class="card-text">Írja be a négyzet oldalainak értékét </p>
+                    <form>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">"a" oldal </label>
+                            </div>
+                            <input class="form-control" type="number" id="teglalapaoldal2" min="0" onclick="szamolteglalapterfogat(), szamolteglalapfelszin()">
+                            <p>cm</p>
+                        </div>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">"b" oldal </label>
+                            </div>
+                            <input class="form-control" type="number" id="teglalapboldal2" min="0" onclick="szamolteglalapterfogat(), szamolteglalapfelszin()">
+                            <p>cm</p>
+                        </div>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">"c" oldal </label>
+                            </div>
+                            <input class="form-control" type="number" id="teglalapcoldal2" min="0" onclick="szamolteglalapterfogat(), szamolteglalapfelszin()">
+                            <p>cm</p>
+                        </div>
+                        <br>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Térfogata (V)</label>
+                            </div>
+                            <input class="form-control" type="text" id="teglalapterfogat" disabled> <p>cm<sup>3</sup></p>
+                        </div>
+                        <div class="input-group col-md-9">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text">Felszíne (A)</label>
+                            </div>
+                            <input class="form-control" type="text" id="teglalapfelszin" disabled> <p>cm<sup>2</sup></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
